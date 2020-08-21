@@ -1,0 +1,78 @@
+$padding-margin: (
+  "0": "0rem",
+  "1": "0.25rem",
+  "2": "0.50rem",
+  "3": "1rem",
+  "4": "1.5rem",
+  "5": "2rem",
+);
+
+$opacity: (
+  "1": "0.1",
+  "2": "0.2",
+  "3": "0.3",
+  "4": "0.4",
+  "5": "0.5",
+  "6": "0.6",
+  "7": "0.7",
+  "8": "0.8",
+  "9": "0.9",
+);
+
+@each $key, $value in $opacity {
+  .opacity-#{$key} {
+    opacity: #{$value} !important;
+  }
+}
+
+@each $key, $value in $padding-margin {
+  .p-#{$key} {
+    padding: #{$value} !important;
+  }
+  .pt-#{$key} {
+    padding-top: #{$value} !important;
+  }
+  .pb-#{$key} {
+    padding-bottom: #{$value} !important;
+  }
+  .px-#{$key} {
+    padding-left: #{$value} !important;
+    padding-right: #{$value} !important;
+  }
+  .py-#{$key} {
+    padding-top: #{$value} !important;
+    padding-bottom: #{$value} !important;
+  }
+  .pl-#{$key} {
+    padding-left: #{$value} !important;
+  }
+  .pr-#{$key} {
+    padding-right: #{$value} !important;
+  }
+  .m-#{$key} {
+    margin: #{$value} !important;
+  }
+  .mt-#{$key} {
+    margin-top: #{$value} !important;
+  }
+  .mb-#{$key} {
+    margin-bottom: #{$value} !important;
+  }
+  .mx-#{$key} {
+    margin-left: #{$value} !important;
+    margin-right: #{$value} !important;
+  }
+  .my-#{$key} {
+    margin-top: #{$value} !important;
+    margin-bottom: #{$value} !important;
+  }
+  .ml-#{$key} {
+    margin-left: #{$value} !important;
+  }
+  .mr-#{$key} {
+    margin-right: #{$value} !important;
+  }
+}
+.d-none{
+  display: none;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Furniture</title>
+    <script
+      src="https://kit.fontawesome.com/5cbe93bb3e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/sass/styles.css" />
+  </head>
+  <body>
+    <div class="furniture-app">
+      <div class="container">
+        <nav>
+          <div class="navbar-left">
+            <div class="collapse-icon" onclick="showHideFilter()">
+              <i class="fas fa-bars"></i>
+            </div>
+            <div class="dropdown">
+              <div class="mobile-menu">
+                <a href="" class="nav-item" onclick="showDropDown()"
+                  >Menu <i class="fas fa-chevron-down"></i
+                ></a>
+              </div>
+              <ul class="navbar dropdown-menu">
+                <li>
+                  <a href="#home" class="nav-item">Home</a>
+                </li>
+                <li><a href="#shop" class="nav-item">Shop</a></li>
+                <li><a href="#magazine" class="nav-item">Magazine</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="navbar navbar-right">
+            <li class="search-icon-nav">
+              <a href="" class="nav-item search-icon" onclick="SearchText()"
+                ><i class="fas fa-search"></i
+              ></a>
+              <input
+                type="text"
+                name="searh"
+                id="search-textbox"
+                onkeyup="onSearchTextKeyUp()"
+                placeholder="Search"
+                value=""
+              />
+            </li>
+            <li>
+              <a href="#?" class="nav-item"
+                ><i class="fas fa-shopping-cart"></i
+              ></a>
+            </li>
+            <li><a href="#login" class="nav-item">Login</a></li>
+          </ul>
+        </nav>
+        <div class="search-icon-nav-mobile">
+          <a href="" class="nav-item search-icon" onclick="SearchText()"
+            ><i class="fas fa-search"></i
+          ></a>
+          <input
+            type="text"
+            name="searh"
+            id="search-textbox"
+            onkeyup="onSearchTextKeyUp()"
+            placeholder="Search"
+            value=""
+          />
+        </div>
+        <div id="app"></div>
+      </div>
+    </div>
+
+    <script src="js/product.js"></script>
+    <script src="js/product-details-page.js"></script>
+    <script src="js/collapse.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
