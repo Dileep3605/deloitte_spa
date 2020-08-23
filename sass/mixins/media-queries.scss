@@ -13,3 +13,9 @@
     }
   }
 }
+
+@mixin IEStyles {
+  @media all and (-ms-high-contrast:none) {
+    @content;
+  }
+}

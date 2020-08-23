@@ -26,10 +26,20 @@
               </div>
               <ul class="navbar dropdown-menu">
                 <li>
-                  <a href="#home" class="nav-item">Home</a>
+                  <a href="#home" class="nav-item" onclick="menuClick()"
+                    >Home</a
+                  >
                 </li>
-                <li><a href="#shop" class="nav-item">Shop</a></li>
-                <li><a href="#magazine" class="nav-item">Magazine</a></li>
+                <li>
+                  <a href="#shop" class="nav-item" onclick="menuClick()"
+                    >Shop</a
+                  >
+                </li>
+                <li>
+                  <a href="#magazine" class="nav-item" onclick="menuClick()"
+                    >Magazine</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -52,7 +62,7 @@
                 ><i class="fas fa-shopping-cart"></i
               ></a>
             </li>
-            <li><a href="#login" class="nav-item">Login</a></li>
+            <li><a href="#login" class="nav-item" >Login</a></li>
           </ul>
         </nav>
         <div class="search-icon-nav-mobile">
@@ -71,7 +81,7 @@
         <div id="app"></div>
       </div>
     </div>
-
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=fetch"></script>
     <script src="js/product.js"></script>
     <script src="js/product-details-page.js"></script>
     <script src="js/collapse.js"></script>

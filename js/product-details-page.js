@@ -1,12 +1,13 @@
+"use strict";
+
 function renderProductDetails(productId) {
-  debugger;
-  fetch(`http://localhost:3000/api/products/${productId}`)
+  fetch("http://localhost:3000/api/products/" + productId)
     .then(function (response) {
       return response.json();
     })
     .then(function (myJson) {
       console.log(myJson);
-      setTimeout(() => {
+      setTimeout(function () {
         renderSelectedProduct(myJson);
       }, 1000);
     })
@@ -35,8 +36,6 @@ function renderSelectedProduct(product) {
 
   productImgGallery.appendChild(productSliderImg);
   productImgGallery.appendChild(renderSliderImageNavigation(product));
-
- 
 
   //   slideNav.appendChild(renderSliderImageNavigation(product));
 
@@ -94,12 +93,9 @@ function renderSelectedProduct(product) {
   selectedProductDetails.appendChild(description);
   selectedProductDetails.appendChild(productColor);
   selectedProductDetails.appendChild(productPriceSection);
- 
+
   productDetailsPage.appendChild(productImgGallery);
   productDetailsPage.appendChild(selectedProductDetails);
-
-
-  
 }
 
 function renderSliderImageNavigation(product) {
@@ -122,7 +118,7 @@ function renderProductColors(product) {
     let productColorSelection = document.createElement("div");
     productColorSelection.setAttribute(
       "class",
-      `product-color-selection color${i}`
+      "product-color-selection" + " color" + i
     );
     selectColor.appendChild(productColorSelection);
   }

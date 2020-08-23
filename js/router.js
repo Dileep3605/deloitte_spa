@@ -20,7 +20,6 @@ Router.prototype = {
     this.rootElem = document.getElementById("app");
   },
   init: function () {
-    debugger;
     var r = this.routes;
     (function (scope, r) {
       window.addEventListener("hashchange", function (e) {

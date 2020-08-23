@@ -1,5 +1,5 @@
-"use strict";
 
+const dropdownMenu = document.querySelector(".dropdown-menu");
 (function () {
   function init() {
     var router = new Router([
@@ -15,7 +15,6 @@
 
 function showDropDown() {
   event.preventDefault();
-  const dropdownMenu = document.querySelector(".dropdown-menu");
   dropdownMenu.classList.toggle("show");
   let body = document.querySelector("body");
   let overlay = document.createElement("div");
@@ -27,7 +26,27 @@ function showDropDown() {
   });
 }
 
-function showHideFilter(){
+function overlayStyle() {
+  let body = document.querySelector("body");
+  let overlay = document.createElement("div");
+  overlay.setAttribute("class", "overlay");
+  body.appendChild(overlay);
+  overlay.addEventListener("click", function () {
+    overlay.remove();
+    dropdownMenu.classList.toggle("show");
+  });
+}
+
+function showHideFilter() {
   const filter = document.querySelector(".filter-section");
   filter.classList.toggle("hide");
+}
+
+function menuClick() {
+  let windowWidth = window.innerWidth;
+  if (windowWidth < 767) {
+    dropdownMenu.classList.toggle("show");
+    let overlay = document.querySelector(".overlay");
+    overlay.remove();
+  }
 }

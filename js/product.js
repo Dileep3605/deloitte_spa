@@ -1,26 +1,28 @@
-var products;
-function getProductsData(){
-  fetch("http://localhost:3000/api/products/")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (myJson) {
-    console.log(myJson);
-    products = myJson;
-    setTimeout(() => {
-      render(products);
-    }, 1000);
-  })
-  .catch(function (error) {
-    console.log("Error: " + error);
-  });
-}
+// "use strict";
 
+var products;
+function getProductsData() {
+  window
+    .fetch("http://localhost:3000/api/products/")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (myJson) {
+      console.log(myJson);
+      products = myJson;
+      setTimeout(function () {
+        render(products);
+      }, 1000);
+    })
+    .catch(function (error) {
+      console.log("Error: " + error);
+    });
+}
 
 function render(productsList) {
   const app = document.querySelector(".card-grid");
   clearContainer(app);
-  productsList.forEach((product) => {
+  productsList.forEach(function (product) {
     let divCard = document.createElement("div");
     divCard.setAttribute("class", "card");
     let divCardThumbnail = document.createElement("div");
@@ -41,8 +43,8 @@ function render(productsList) {
     productDetails.setAttribute("class", "product-details");
 
     let productTitle = document.createElement("a");
-    productTitle.setAttribute("href", `#product-details`);
-    productTitle.addEventListener("click", function(){
+    productTitle.setAttribute("href", "#product-details");
+    productTitle.addEventListener("click", function () {
       renderProductDetails(product.productId);
     });
     productTitle.setAttribute("class", "product-title");
@@ -57,7 +59,7 @@ function render(productsList) {
 
     let productPrice = document.createElement("p");
     productPrice.setAttribute("class", "product-price");
-    productPrice.textContent = `$${product.productPrice}`;
+    productPrice.textContent = "$" + product.productPrice;
 
     productMeta.appendChild(productDetails);
     productMeta.appendChild(productPrice);
@@ -106,7 +108,7 @@ function generateRating(product) {
 function SearchText() {
   event.preventDefault();
   const getSearchElement = document.getElementById("search-textbox").value;
-  let filterProducts = products.filter((product, index) => {
+  let filterProducts = products.filter(function (product, index) {
     let title = product.productTitle.toLowerCase();
     return title.includes(getSearchElement);
   });
@@ -116,10 +118,10 @@ function SearchText() {
 function onSearchTextKeyUp() {
   const getSearchElement = document.getElementById("search-textbox").value;
   let searchLength = getSearchElement.length;
-  if(searchLength === 0){
+  if (searchLength === 0) {
     render(products);
   }
-  if(event.keyCode == 13){
-    SearchText()
+  if (event.keyCode == 13) {
+    SearchText();
   }
 }

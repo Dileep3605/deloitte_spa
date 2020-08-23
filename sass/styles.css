@@ -569,8 +569,8 @@ p {
         -ms-flex-align: start;
             align-items: flex-start;
     background: #ffffff;
-    -webkit-box-shadow: 0 0 6px #ddd;
-            box-shadow: 0 0 6px #ddd;
+    -webkit-box-shadow: 0 0 6px #222;
+            box-shadow: 0 0 6px #222;
     padding: 0.5rem 0;
     z-index: 9;
     top: 25px;
@@ -721,12 +721,35 @@ p {
           flex: 1;
 }
 
+@media (max-width: 767px) {
+  .furniture-app .main-container .product-section {
+    padding-left: 0;
+  }
+}
+
 .furniture-app .main-container .product-section .card-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   grid-gap: 2rem;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .main-container .product-section .card-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .main-container .product-section .card-grid .card {
+    width: 250px;
+    margin: 0 20px 20px 0;
+  }
 }
 
 .furniture-app .main-container .product-section .card-grid .card .card-thumbnail img {
@@ -801,14 +824,44 @@ p {
   grid-gap: 2rem;
 }
 
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .product-details-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .furniture-app .product-details-page {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .furniture-app .product-details-page .product-img-gallery {
   margin: 0 auto;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .product-details-page .product-img-gallery {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-right: 50px;
+  }
 }
 
 .furniture-app .product-details-page .product-img-gallery .slider-img {
   width: 100%;
   position: relative;
   margin-bottom: 1rem;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .product-details-page .product-img-gallery .slider-img {
+    text-align: right;
+  }
 }
 
 .furniture-app .product-details-page .product-img-gallery .slider-img .slide-img-next {
@@ -845,9 +898,32 @@ p {
           align-items: center;
 }
 
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .product-details-page .product-img-gallery .slider-nav {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
 .furniture-app .product-details-page .product-img-gallery .slider-nav img {
   width: 40px;
   cursor: pointer;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .product-details-page .product-img-gallery .slider-nav img {
+    margin-right: 20px;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .furniture-app .product-details-page .selected-product-details {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-right: 50px;
+  }
 }
 
 .furniture-app .product-details-page .selected-product-details .category {

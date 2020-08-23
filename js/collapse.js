@@ -1,5 +1,7 @@
+"use strict";
+
 function collapseBindListener() {
-  setTimeout(() => {
+  setTimeout(function () {
     var coll = document.querySelectorAll(".collapsible");
     var i;
 

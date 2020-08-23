@@ -86,7 +86,7 @@
             flex-direction: column;
             align-items: flex-start;
             background: #ffffff;
-            box-shadow: 0 0 6px #ddd;
+            box-shadow: 0 0 6px #222;
             padding: 0.5rem 0;
             z-index: 9;
             top: 25px;
@@ -179,8 +179,8 @@
         transition: 0.3s all ease-in-out;
       }
     }
-    
-    .filter-section.hide{
+
+    .filter-section.hide {
       display: none;
       @include mq(767px) {
         width: 300px;
@@ -190,12 +190,23 @@
     }
     .product-section {
       padding-left: 1rem;
+      @include mq(767px) {
+        padding-left: 0;
+      }
       flex: 1;
       .card-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         grid-gap: 2rem;
+        @include IEStyles {
+          display: flex;
+          flex-flow: wrap;
+        }
         .card {
+          @include IEStyles {
+            width: 250px;
+            margin: 0 20px 20px 0;
+          }
           .card-thumbnail {
             img {
               max-width: 100%;
@@ -248,12 +259,25 @@
     display: grid;
     grid-template-columns: 1.3fr 1fr;
     grid-gap: 2rem;
+    @include IEStyles {
+      display: flex;
+    }
+    @include mq(767px) {
+      grid-template-columns: 1fr;
+    }
     .product-img-gallery {
       margin: 0 auto;
+      @include IEStyles {
+        flex: 1;
+        margin-right: 50px;
+      }
       .slider-img {
         width: 100%;
         position: relative;
         margin-bottom: 1rem;
+        @include IEStyles {
+          text-align: right;
+        }
         .slide-img-next {
           position: absolute;
           right: 0;
@@ -269,13 +293,23 @@
       }
       .slider-nav {
         @include flex-style(space-evenly, center);
+        @include IEStyles {
+          justify-content: flex-end;
+        }
         img {
           width: 40px;
           cursor: pointer;
+          @include IEStyles {
+            margin-right: 20px;
+          }
         }
       }
     }
     .selected-product-details {
+      @include IEStyles {
+        flex: 1;
+        margin-right: 50px;
+      }
       .category {
         font-size: 0.8rem;
         opacity: 0.5;
