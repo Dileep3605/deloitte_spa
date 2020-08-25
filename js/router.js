@@ -46,7 +46,6 @@ Router.prototype = {
     }
   },
   goToRoute: function (htmlName, routeId) {
-    
     (function (scope) {
       var url = "views/" + htmlName,
         xhttp = new XMLHttpRequest();
@@ -57,14 +56,13 @@ Router.prototype = {
       };
       xhttp.open("GET", url, true);
       xhttp.send();
-      //getProductsData()
     })(this);
     if (routeId == 1111) {
       getProductsData();
       collapseBindListener();
     }
     if (routeId == 1112) {
-      renderProductDetails(101)
+      //renderProductDetails(101);
     }
   },
 };

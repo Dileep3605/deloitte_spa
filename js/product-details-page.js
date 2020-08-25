@@ -1,4 +1,8 @@
 "use strict";
+let id = localStorage.getItem("productId");
+if (id) {
+  renderProductDetails(id);
+}
 
 function renderProductDetails(productId) {
   fetch("http://localhost:3000/api/products/" + productId)

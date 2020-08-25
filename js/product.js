@@ -46,6 +46,7 @@ function render(productsList) {
     productTitle.setAttribute("href", "#product-details");
     productTitle.addEventListener("click", function () {
       renderProductDetails(product.productId);
+      localStorage.setItem("productId", product.productId);
     });
     productTitle.setAttribute("class", "product-title");
     productTitle.textContent = product.productTitle;
